@@ -19,7 +19,13 @@ export default {
     //     value: 10,
     //   });
     // ...mapActions(['increment', 'increase']),
-    ...mapActions({
+    // ...mapActions({
+    //   inc: 'increment',
+    //   increase: 'increase',
+    // }),
+
+    //namespaced
+    ...mapActions('numbers', {
       inc: 'increment',
       increase: 'increase',
     }),
