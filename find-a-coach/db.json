@@ -1,5 +1,49 @@
 {
-  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" }
+  "posts": [
+    {
+      "id": "c1",
+      "firstName": "Maximilian",
+      "lastName": "Schwarzmüller",
+      "areas": [
+        "frontend",
+        "backend",
+        "career"
+      ],
+      "description": "I'm Maximilian and I've worked as a freelance web developer for years. Let me help you become a developer as well!",
+      "hourlyRate": 30
+    },
+    {
+      "id": "c2",
+      "firstName": "Julie",
+      "lastName": "Jones",
+      "areas": [
+        "frontend",
+        "career"
+      ],
+      "description": "I am Julie and as a senior developer in a big tech company, I can help you get your first job or progress in your current role.",
+      "hourlyRate": 30
+    },
+    {
+      "id": "c3",
+      "firstName": "Max",
+      "lastName": "New",
+      "description": "New",
+      "hourlyRate": 39,
+      "areas": [
+        "frontend",
+        "backend",
+        "career"
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
