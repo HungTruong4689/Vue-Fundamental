@@ -1,0 +1,14 @@
+{
+  "rules": {
+    "coaches": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "requests": {
+      ".read": "auth != null",
+      ".write": true
+    },
+    ".read": "now < 1599343200000",
+    ".write": "now < 1599343200000"
+  }
+}
