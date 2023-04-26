@@ -5,6 +5,16 @@ const app = Vue.createApp({
       name: ''
     };
   },
+  computed: {
+    fullName(){
+      console.log("Changed!!!")
+      if(this.name === ''){
+        return '';
+      }
+      return this.name + ' '+ 'Mobile';
+    }
+  },
+
   methods: {
     outputFullname(){
       if(this.name === ''){
