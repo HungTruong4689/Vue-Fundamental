@@ -19,6 +19,9 @@
   <label><input type="radio" v-model="value" value="two" /> Two</label>
   <label><input type="radio" v-model="value" value="three" /> Three</label>
   <p>The value is {{ value }}</p>
+
+  <button v-on:click="counter++">Click to increase counter</button>
+  <p>You've clicked the button {{ counter }} times.</p>
 </template>
 
 <script>
@@ -33,6 +36,7 @@ export default {
       buttonType: "submit",
       buttonDisabled: true,
       seconds: 0,
+      counter: 0,
     };
   },
   created() {
