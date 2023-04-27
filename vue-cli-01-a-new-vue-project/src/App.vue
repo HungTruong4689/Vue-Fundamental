@@ -10,6 +10,7 @@
       :name="friend.name"
       :phone-number="friend.phone"
       :email-address="friend.email"
+      :is-favorite="friend.isFavourite"
     ></friend-contact>
   </ul>
 </template>
@@ -24,12 +25,14 @@ export default {
           name: "Manuel Lorenz",
           phone: "0123 45678 90",
           email: "manual@localhost.com",
+          isFavourite: true,
         },
         {
           id: "julie",
           name: "Julie Jones",
           phone: "0987 654421 21",
           email: "julie@localhost.com",
+          isFavourite: false,
         },
       ],
     };
