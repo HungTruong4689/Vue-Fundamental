@@ -14,6 +14,24 @@ const app = Vue.createApp({
       this.message = this.$refs.userText.value;
     },
   },
+  beforeCreate(){
+    console.log('beforeCreate()')
+  },
+  created(){
+    console.log('created()')
+  },
+  mounted(){
+    console.log('mounted()')
+  },
+  updated(){
+    console.log('update')
+  },
+  beforeUnmount(){
+    console.log('beforeUnmounted(')
+  },
+  unmounted(){
+    console.log('unmounted()')
+  }
 });
 
 app.mount('#app');
