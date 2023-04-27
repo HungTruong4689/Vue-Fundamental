@@ -15,9 +15,17 @@
 export default {
   //   props: ["name", "phoneNumber", "emailAddress"],
   props: {
-    name: String,
-    phoneNumber: String,
-    emailAddress: String,
+    name: { type: String, required: true },
+    phoneNumber: { type: String, required: true },
+    emailAddress: { type: String, required: true },
+    isFavorite: {
+      type: String,
+      required: false,
+      default: "0",
+      validator: function (value) {
+        return value === "1" || value === "0";
+      },
+    },
   },
   data() {
     return {

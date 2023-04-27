@@ -2,12 +2,14 @@
   <header><h1>My Friends</h1></header>
   <ul>
     <!-- <li v-for="friend in friends" :key="friend.id">{{ friend.name }}</li> -->
+    <!-- v-for="friend in friends"
+      :key="friend.id" -->
     <friend-contact
       v-for="friend in friends"
       :key="friend.id"
-      name="friend.name"
-      phone-number="friend.phone"
-      email-address="friend.email"
+      :name="friend.name"
+      :phone-number="friend.phone"
+      :email-address="friend.email"
     ></friend-contact>
   </ul>
 </template>
