@@ -13,6 +13,6 @@ const app = createApp(App);
 app.component("base-badge", BaseBadge);
 // app.component("badge-list", BadgeList);
 // app.component("user-info", UserInfo);
-app.component("base-card2", BaseCard);
+app.component("base-card", BaseCard);
 
 app.mount("#app");
