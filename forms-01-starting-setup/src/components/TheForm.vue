@@ -66,6 +66,8 @@ export default {
       console.log('Username: ' + this.userName);
       this.userName = '';
       console.log('User age: ' + this.userAge);
+      console.log('Referrer: ' + this.referrer);
+      this.referrer = '';
     },
   },
 };
