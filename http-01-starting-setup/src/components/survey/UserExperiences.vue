@@ -11,7 +11,8 @@
       <p v-else-if="!isLoading && (!results || results.length === 0)">
         No stored experiences found. Start adding some survey results first
       </p>
-      <ul v-else-if="!isLoading && results && results.length > 0">
+      <p v-else-if="!isLoading && error">{{ error }}</p>
+      <ul v-else>
         <survey-result
           v-for="result in results"
           :key="result.id"
@@ -35,11 +36,13 @@ export default {
     return {
       results: [],
       isLoading: false,
+      error: null,
     };
   },
   methods: {
     loadExperiences() {
       this.isLoading = true;
+      this.error = null;
       fetch('https://vue-http-prj-default-rtdb.firebaseio.com/surveys.json', {})
         .then((response) => {
           if (response.ok) {
@@ -57,6 +60,11 @@ export default {
             });
           }
           this.results = results;
+        })
+        .catch((error) => {
+          console.log(error);
+          this.isLoading = false;
+          this.error = 'Failed to fetch data - please try again later';
         });
     },
   },
