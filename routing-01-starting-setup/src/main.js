@@ -60,6 +60,11 @@ router.beforeEach(function (to, from, next) {
   next();
 });
 
+router.afterEach(function (to, from) {
+  //sending analytics data
+  console.log(to, from);
+});
+
 const app = createApp(App);
 
 app.use(router);
