@@ -8,6 +8,7 @@
       :role="user.role"
     ></user-item>
   </ul>
+  <button @click="saveChanges">Save Changes</button>
 </template>
 
 <script>
@@ -18,16 +19,36 @@ export default {
     UserItem,
   },
   inject: ['users'],
+  data() {
+    return { changesSaved: false };
+  },
   methods: {
     confirmInput() {
       //do something
       this.$router.push('/teams');
+    },
+    saveChanges() {
+      this.changesSaved = true;
     },
   },
   beforeRouteEnter(to, from, next) {
     console.log('USersList cmp beforeROuteEnter');
     console.log(to, from);
     next();
+  },
+  beforeRouteLeave(to, from, next) {
+    console.log('UserLost Cmp beforeRouteLeave');
+    console.log(to, from);
+
+    if (this.changesSaved) {
+      next();
+    } else {
+      const userWantsToLeave = confirm('Are you sure? you got unsaved changes');
+      next(userWantsToLeave);
+    }
+  },
+  unmounted() {
+    console.log('unmounted');
   },
 };
 </script>
